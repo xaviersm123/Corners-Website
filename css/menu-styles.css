@@ -1,0 +1,381 @@
+/* styles.css */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    flex: 1;
+}
+
+.menu-toggle {
+    cursor: pointer;
+}
+
+.burger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333;
+}
+
+/* Mobile Navigation Styles */
+#mobile-nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#mobile-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.menu-header {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.menu-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.menu-header .highlight {
+    color: #00b8b8;
+    font-weight: 700;
+}
+
+/* Category Buttons Styling */
+.category-buttons-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.category-buttons {
+    display: flex;
+}
+
+.category-button {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #00b8b8;
+    background-color: #fff;
+    color: #00b8b8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-button.active,
+.category-button:hover {
+    background-color: #00b8b8;
+    color: #fff;
+}
+
+.menu-section {
+    padding: 40px 0;
+    background: #fff;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Menu Items */
+.menu-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.menu-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item-content {
+    padding: 15px;
+}
+
+.menu-item-content h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.menu-item-content p {
+    color: #777;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #00b8b8;
+    font-weight: bold;
+}
+
+/* Popup Modal Styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.popup-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.popup-content h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
+}
+
+.popup-content p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #777;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+    background: none;
+    border: none;
+    z-index: 300; /* Ensure it's above other elements */
+    padding: 10px; /* Increase hit area */
+}
+
+.close-button:hover {
+    color: #00b8b8;
+}
+
+/* Mobile View Fixed Navigation */
+@media (max-width: 768px) {
+    .category-buttons-wrapper.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: #f9f9f9;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add padding to the main content to account for the fixed navbar */
+    .menu-section {
+        margin-top: 60px;
+    }
+
+}
+
+.category-buttons-wrapper.fixed {
+    position: fixed;
+    top: 0;
+    width: 1400px;
+    z-index: 100;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.category-arrows {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -40px;
+}
+
+.scroll-arrow {
+    background: #fff;
+    border: 1px solid #00b8b8;
+    color: #00b8b8;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.scroll-arrow:hover {
+    background-color: #00b8b8;
+    color: #fff;
+}
+
+.scroll-arrow.hidden {
+    display: none;
+}
+
+#menu-category-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Centers the text horizontally */
+    margin: 0 auto 20px auto; /* Centers the element and adds bottom margin */
+    width: 100%; /* Ensures it takes the full width of its container */
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333; /* Adjust text color as needed */
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background to make text readable */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.banner-content a.change-location {
+    color: #f7b42c; /* Adjust color to match your theme */
+    text-decoration: none;
+}
+
+.banner-content .pickup-button,
+.banner-content .delivery-button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f7b42c; /* Adjust color to match your theme */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.banner-content .delivery-button {
+    background-color: #333; /* Adjust for a different button color if needed */
+}
+
+.banner-content .pickup-button:hover,
+.banner-content .delivery-button:hover {
+    background-color: #d39e21; /* Darker shade on hover */
+}
+
