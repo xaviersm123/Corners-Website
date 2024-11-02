@@ -2,17 +2,25 @@
 <html lang="en">
 
 <head>
+    <!-- Meta and Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halal Malaysian Restaurant - Menu</title>
+    <title>Corners Sports Bar - Menu</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu-styles.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -26,89 +34,95 @@
                 </ul>
             </nav>
 
+            <!-- Mobile Menu Toggle -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="burger"></span>
                 <span class="burger"></span>
                 <span class="burger"></span>
             </div>
         </div>
-        <nav id="mobile-nav" class="hidden">
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-nav">
             <ul class="nav-links">
-                <li><a href="#">Order Now</a></li>
-                <li><a href="#">Catering Services</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">Menu Options</a></li>
-                <li><a href="#">Special Offers</a></li>
-                <li><a href="#" class="button sign-up">Sign Up</a></li>
-                <li><a href="#" class="button learn-more">Learn More</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-        <!-- New Banner Section -->
-<section class="banner">
-    <div class="banner-image">
-        <img src="https://www.yourfreecareertest.com/wp-content/uploads/2022/02/become_a_food_prep_worker-1.jpg" alt="Food Banner">
-    </div>
-    <div class="banner-content">
-        <h2>Food Terminal</h2>
-        <p>5000 Buford Hwy NE b201, Chamblee, GA 30341, USA • <a href="#" class="change-location">Change Location</a></p>
-        <p>Open Hours: 11:00 AM - 8:30 PM</p>
-        <button class="pickup-button">Delivery</button>
-        <button class="delivery-button">Pickup</button>
-    </div>
-</section>
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-image">
+            <img src="./assets/pexels-fotios-photos-776538.jpg" alt="Food Banner">
+        </div>
+        <div class="banner-content">
+            <h2>Corners Sports Bar</h2>
+            <p>7160 Jimmy Carter Blvd, Peachtree Corners, GA 30092, USA</p>
+            <p>Open Hours: 11:00 AM - 02:00 AM</p>
+            <!-- Updated Button Classes -->
+            <button class="food-button">Food Menu</button>
+            <button class="drinks-button">Drinks Menu</button>
+        </div>
+    </section>
 
-
-
-
+    <!-- Menu Header Section -->
     <section class="menu-header">
         <div class="container">
-            <h1>Get your food <span class="highlight">delivered</span>, or <span class="highlight">pick-up</span> in store.</h1>
+            <h1>Discover <span class="highlight">bold </span>flavors and <span class="highlight">good vibes </span> at every bite!</h1>
             <div class="category-buttons-wrapper">
-                <div class="category-buttons">
-                    <button id="all" class="category-button active" data-category="all">FULL MENU</button>
-                    <button id="drinks" class="category-button" data-category="drinks">DRINKS</button>
-                    <button id="starting-lineup" class="category-button" data-category="starting-lineup">THE STARTING LINEUP</button>
-                    <button id="game-day-wings" class="category-button" data-category="game-day-wings">GAME DAY WINGS</button>
-                    <button id="field-of-greens" class="category-button" data-category="field-of-greens">FIELD OF GREENS</button>
-                    <button id="from-the-sea" class="category-button" data-category="from-the-sea">FROM THE SEA</button>
-                    <button id="smash-burgers" class="category-button" data-category="smash-burgers">SMASH BURGERS</button>
-                    <button id="sandwich-all-stars" class="category-button" data-category="sandwich-all-stars">SANDWICH ALL-STARS</button>
-                    <button id="main-events" class="category-button" data-category="main-events">THE MAIN EVENTS</button>
-                    <button id="sides-3" class="category-button" data-category="sides-3">SIDES $3</button>
-                    <button id="premo-sides-5" class="category-button" data-category="premo-sides-5">PREMO SIDES $5</button>
-                    <button id="kids-menu" class="category-button" data-category="kids-menu">KIDS MENU</button>
-                    <button id="dessert" class="category-button" data-category="dessert">DESSERT</button>
-                </div>
-                <div class="category-arrows">
-                    <button id="scroll-left" class="scroll-arrow hidden">&#8249;</button>
-                    <button id="scroll-right" class="scroll-arrow">&#8250;</button>
-                </div>                
+                <!-- Category Buttons will be dynamically generated -->
+                <div class="category-buttons" id="category-buttons">
+                    <!-- Buttons will be inserted here -->
+                </div>               
             </div>
         </div>
     </section>
 
+    <!-- Menu Items Section -->
     <section class="menu-section">
         <div class="container">
-            <h2 id="menu-category-title">FULL MENU</h2> <!-- This will dynamically change based on the selected category -->
+            <h2 id="menu-category-title">FULL FOOD MENU</h2> <!-- Dynamically updated category title -->
+            <!-- Message Placeholder -->
+            <p id="category-message" class="category-message hidden"></p>
             <div class="menu-grid" id="menu-items-container">
                 <!-- Menu items will be dynamically populated here -->
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <p>&copy; 2024 Halal Malaysian Restaurant. All rights reserved.</p>
-                <ul class="footer-links">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top hidden">&#8679;</button>
 
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-hours">
+            <p>Mon-Fri 11:00 AM – 2:00 AM</p>
+            <p>Sat 12:00 PM – 02:00 AM</p>
+            <p>Sun 12:00 PM – 12:00 AM</p>
+        </div>
+        <div class="footer-logo">
+            <img src="assets/CornersFooter.png" alt="Corners Logo"> <!-- Replace with your logo path -->
+        </div>
+        <div class="footer-contact">
+            <p>7160 Jimmy Carter Blvd</p>
+            <p>Peachtree Corners, GA 30092</p>
+            <br>
+            <p>470-657-2488</p>
+            <p><a href="mailto:hello@cornersbar.com">hello@cornersbar.com</a></p>
+        </div>
+    </div>
+    <div class="footer-social">
+        <a href="#"><img src="assets/facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/instagram-icon.png" alt="Instagram"></a>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Corners Sports Bar & Grill. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <!-- Popup Modal for Menu Item Details -->
     <div id="popup" class="popup hidden">
         <div class="popup-content">
             <span class="close-button">&times;</span>
@@ -118,6 +132,7 @@
         </div>
     </div>
 
+    <!-- JavaScript Files -->
     <script type="module" src="js/menu.js"></script>
 
 </body>

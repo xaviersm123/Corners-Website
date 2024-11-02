@@ -12,10 +12,11 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    font-weight: 500;
 }
 
 a:hover {
-    color: #00b8b8;
+    color: #7AC143;
 }
 
 .container {
@@ -39,6 +40,14 @@ header {
     position: relative;
     z-index: 150;
 }
+
+.logo {
+    flex-grow: 1;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
 
 .logo img {
     max-height: 80px;
@@ -70,7 +79,7 @@ header {
 }
 
 .nav-links li a:hover {
-    color: #00b8b8;
+    color: #7AC143;
 }
 
 .menu-toggle {
@@ -111,7 +120,6 @@ header {
     }
 
     .nav-links {
-        display: none;
         position: absolute;
         top: 100%;
         right: 0;
@@ -119,7 +127,6 @@ header {
         width: 100%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         flex-direction: column;
-        display: none;
     }
 
     .nav-links.active {
@@ -157,57 +164,6 @@ header {
     color: #fff;
 }
 
-/* Footer Section */
-.footer-section {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.footer-logo {
-    max-height: 40px;
-}
-
-.footer-right ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-right ul li a {
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.footer-right ul li a:hover {
-    color: #00b8b8;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-.footer-bottom a {
-    color: #00b8b8;
-    transition: color 0.3s;
-}
-
-.footer-bottom a:hover {
-    color: #fff;
-}
-
 /* Hero Section */
 .hero {
     background-image: url('path-to-hero-image.jpg');
@@ -239,4 +195,25 @@ header {
 
 .hero-buttons a {
     margin: 5px;
+}
+
+@font-face {
+    font-family: 'IndustryInc-Cutline'; /* Choose a name for your custom font */
+    src: url('../assets/IndustryInc-Cutline.woff') format('woff'); /* Fallback to woff */
+    font-weight: 400; /* Specify font weight, usually 'normal' or 'bold' */
+    font-style: normal;  /* Specify font style, usually 'normal', 'italic', etc. */
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: none; /* Keep this to hide mobile nav on larger screens */
+    }
+
+    .desktop-nav {
+        display: block;
+    }
 }

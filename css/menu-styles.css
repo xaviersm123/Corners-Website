@@ -41,7 +41,6 @@ header {
     width: 100%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
 }
 
 #mobile-nav ul {
@@ -55,12 +54,49 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-@media (min-width: 768px) {
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
     #mobile-menu {
-        display: none;
+        display: block;
+        cursor: pointer;
     }
 
     #mobile-nav {
+        display: none; /* Hide the mobile nav by default */
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+    #mobile-nav.active {
+        display: block; /* Show the mobile nav when 'active' class is present */
+    }
+
+    .nav-links {
+        display: flex; /* Display nav links as flex items */
+        flex-direction: column; /* Stack them vertically */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links li a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    /* Hide desktop navigation on mobile */
+    .desktop-nav {
         display: none;
     }
 
@@ -83,13 +119,13 @@ header {
 }
 
 .menu-header .highlight {
-    color: #00b8b8;
+    color: #7AC143;
     font-weight: 700;
 }
 
 /* Category Buttons Styling */
 .category-buttons-wrapper {
-    overflow-x: auto;
+    overflow-x: hidden;
     white-space: nowrap;
     display: flex;
     background-color: #f9f9f9;
@@ -99,12 +135,15 @@ header {
 
 .category-buttons {
     display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
 }
 
 .category-button {
     flex: 0 0 auto;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 8px;
     border: 1px solid #00b8b8;
     background-color: #fff;
     color: #00b8b8;
@@ -115,7 +154,7 @@ header {
 
 .category-button.active,
 .category-button:hover {
-    background-color: #00b8b8;
+    background-color: #7AC143;
     color: #fff;
 }
 
@@ -168,12 +207,16 @@ header {
     font-size: 1.3rem;
     color: #000000;
     text-transform: uppercase;
+    font-family: ProximaNova-Bold, sans-serif;
+    font-weight: 600
+    ;
 }
 
 .menu-item-content p {
     color: #777;
     margin: 10px 0;
     font-size: 0.9rem;
+    font-family: ProximaNova-Regular, sans-serif;
 }
 
 .menu-item-footer {
@@ -185,7 +228,7 @@ header {
 
 .price {
     font-size: 1.2rem;
-    color: #00b8b8;
+    color: #7AC143;
     font-weight: bold;
 }
 
@@ -215,6 +258,7 @@ header {
 
 .popup-content img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -276,6 +320,16 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .category-buttons-wrapper.fixed {
+        width: auto; /* Use auto width for mobile devices */
+        left: 0; /* Ensure it sticks to the left side of the screen */
+        right: 0; /* Ensure it sticks to the right side of the screen */
+        padding: 0 10px; /* Add some padding for better spacing */
+    }
+}
+
 
 .category-arrows {
     position: relative;
@@ -305,19 +359,20 @@ header {
 }
 
 #menu-category-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #7AC143;
     margin-bottom: 20px;
     text-align: center; /* Centers the text horizontally */
     margin: 0 auto 20px auto; /* Centers the element and adds bottom margin */
     width: 100%; /* Ensures it takes the full width of its container */
+    font-family: IndustryInc-Cutline, sans-serif; /* Custom font family */
 }
 
 .banner {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust the height as needed */
+    height: 500px; /* Adjust the height as needed */
     overflow: hidden;
 }
 
@@ -339,6 +394,21 @@ header {
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .banner-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #333; /* Adjust text color as needed */
+        background: rgba(255, 255, 255, 0.85); /* Semi-transparent background to make text readable */
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+    }
+}
+
 .banner-content h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -352,12 +422,12 @@ header {
 }
 
 .banner-content a.change-location {
-    color: #f7b42c; /* Adjust color to match your theme */
+    color: #000000; /* Adjust color to match your theme */
     text-decoration: none;
 }
 
-.banner-content .pickup-button,
-.banner-content .delivery-button {
+.banner-content .food-button,
+.banner-content .drinks-button {
     font-size: 1rem;
     font-weight: 600;
     padding: 10px 20px;
@@ -365,17 +435,94 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #f7b42c; /* Adjust color to match your theme */
+    background-color: #7AC143; /* Adjust color to match your theme */
     color: white;
     transition: background-color 0.3s;
 }
 
-.banner-content .delivery-button {
+.banner-content .drinks-button {
     background-color: #333; /* Adjust for a different button color if needed */
 }
 
-.banner-content .pickup-button:hover,
-.banner-content .delivery-button:hover {
-    background-color: #d39e21; /* Darker shade on hover */
+.banner-content .food-button:hover,
+.banner-content .drinks-button:hover {
+    background-color: #333; /* Darker shade on hover */
 }
 
+/* Back to Top Button Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 40px; /* Position from the bottom */
+    right: 40px;  /* Position from the right */
+    width: 50px;
+    height: 50px;
+    background-color: #7AC143; /* Button background color */
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Makes the button round */
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 500; /* Ensure the button is above other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #333; /* Change color on hover */
+}
+
+.back-to-top.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-image img {
+        height: 500px; /* Adjust the height to maintain aspect ratio */
+        width: 100%;
+    }
+}
+
+.category-message {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.category-message.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+
+    .logo img {
+        max-height: 80px; /* Reduce logo size for better fit on mobile */
+    }
+
+    .menu-toggle {
+        position: absolute;
+        right: 10px;
+        top: 35px;
+        display: block;
+    }
+}
